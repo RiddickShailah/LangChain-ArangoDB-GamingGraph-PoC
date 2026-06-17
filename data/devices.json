@@ -1,0 +1,44 @@
+[
+  {
+    "_key": "d1",
+    "device_id": "d1",
+    "device_type": "Windows PC",
+    "ip_address": "192.168.1.10",
+    "location": "US"
+  },
+  {
+    "_key": "d2",
+    "device_id": "d2",
+    "device_type": "iPhone 14",
+    "ip_address": "192.168.1.11",
+    "location": "US"
+  },
+  {
+    "_key": "d3",
+    "device_id": "d3",
+    "device_type": "Android Tablet",
+    "ip_address": "10.0.0.5",
+    "location": "CA"
+  },
+  {
+    "_key": "d4",
+    "device_id": "d4",
+    "device_type": "MacBook Pro",
+    "ip_address": "172.16.0.22",
+    "location": "UK"
+  },
+  {
+    "_key": "d5",
+    "device_id": "d5",
+    "device_type": "Windows Laptop",
+    "ip_address": "192.168.1.15",
+    "location": "US"
+  },
+  {
+    "_key": "d6",
+    "device_id": "d6",
+    "device_type": "Samsung Galaxy S22",
+    "ip_address": "10.0.0.8",
+    "location": "CA"
+  }
+]
