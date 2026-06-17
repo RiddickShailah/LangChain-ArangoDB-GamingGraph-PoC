@@ -24,3 +24,10 @@ Synthetic dataset includes:
 ## Running the Demo
 1. Start ArangoDB locally
 2. Install dependencies:
+3. Seed the database:
+4. Run the LangChain demo:
+
+## Architecture
+- ArangoGraph for schema introspection
+- ArangoGraphQAChain for NL → AQL
+- ArangoVector for semantic similarity
