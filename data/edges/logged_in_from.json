@@ -1,0 +1,12 @@
+[
+  { "_from": "players/p1", "_to": "devices/d1" },
+  { "_from": "players/p3", "_to": "devices/d1" },
+  { "_from": "players/p5", "_to": "devices/d2" },
+  { "_from": "players/p7", "_to": "devices/d2" },
+  { "_from": "players/p2", "_to": "devices/d3" },
+  { "_from": "players/p4", "_to": "devices/d4" },
+  { "_from": "players/p6", "_to": "devices/d5" },
+  { "_from": "players/p8", "_to": "devices/d6" },
+  { "_from": "players/p9", "_to": "devices/d6" },
+  { "_from": "players/p10", "_to": "devices/d5" }
+]
