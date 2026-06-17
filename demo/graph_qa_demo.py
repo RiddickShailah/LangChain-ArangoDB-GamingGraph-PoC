@@ -2,24 +2,29 @@ from arango import ArangoClient
 from langchain_arangodb import ArangoGraph
 from langchain_openai import ChatOpenAI
 
+# 1. Connect to ArangoDB
 client = ArangoClient(hosts="http://localhost:8529")
 db = client.db("gaming", username="root", password="root")
 
-graph = ArangoGraph(
-    client=client,
-    database="gaming"
+# 2. Initialize ArangoGraph using the ONLY supported parameter
+graph = ArangoGraph(connection=db)
+
+# 3. Initialize LLM
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+
+# 4. Build the QA chain using the new API
+qa = graph.query_llm(
+    llm=llm,
+    include_schema=True,
+    max_depth=3
 )
 
-# LLM for natural language → AQL
-llm = ChatOpenAI(model="gpt-4o-mini")
-
-qa = ArangoGraphQAChain.from_llm(llm=llm, graph=graph)
-
-# Basic test query
+# 5. Run a test query
 query = "List all players who logged in from the same device as player p1."
-response = qa.run(query)
+response = qa.invoke(query)
 
 print("\n=== Natural Language Query ===")
 print(query)
 print("\n=== Response ===")
 print(response)
+
