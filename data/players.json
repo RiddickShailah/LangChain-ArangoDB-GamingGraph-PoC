@@ -1,0 +1,8 @@
+[
+  { "_key": "d1", "ip": "172.16.4.21", "device_type": "PC" },
+  { "_key": "d2", "ip": "172.16.4.22", "device_type": "PC" },
+  { "_key": "d3", "ip": "10.0.0.55", "device_type": "Mobile" },
+  { "_key": "d4", "ip": "10.0.0.56", "device_type": "Mobile" },
+  { "_key": "d5", "ip": "192.168.88.14", "device_type": "Tablet" },
+  { "_key": "d6", "ip": "192.168.88.15", "device_type": "PC" }
+]
