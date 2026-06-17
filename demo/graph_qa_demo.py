@@ -6,8 +6,8 @@ from langchain_openai import ChatOpenAI
 client = ArangoClient(hosts="http://localhost:8529")
 db = client.db("gaming", username="root", password="root")
 
-# 2. Initialize ArangoGraph using the ONLY supported parameter
-graph = ArangoGraph(connection=db)
+# 2. Initialize ArangoGraph (NO arguments in your version)
+graph = ArangoGraph()
 
 # 3. Initialize LLM
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
@@ -15,6 +15,7 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 # 4. Build the QA chain using the new API
 qa = graph.query_llm(
     llm=llm,
+    db=db,                 # <-- THIS is where the DB connection goes now
     include_schema=True,
     max_depth=3
 )
