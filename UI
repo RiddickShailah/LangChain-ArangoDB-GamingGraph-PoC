@@ -1,0 +1,73 @@
+import streamlit as st
+from langchain_groq import ChatGroq
+from langchain_arangodb import ArangoGraph
+from langchain_arangodb.chains.graph_qa.arangodb import ArangoGraphQAChain
+from arango import ArangoClient
+
+# -----------------------------
+# PAGE CONFIG
+# -----------------------------
+st.set_page_config(
+    page_title="Gaming Graph Intelligence",
+    page_icon="🎮",
+    layout="wide"
+)
+
+st.title("🎮 Gaming Graph Intelligence Demo")
+st.write("Natural-language questions → AQL → ArangoDB → LLM reasoning")
+
+# -----------------------------
+# CONNECT TO ARANGODB
+# -----------------------------
+@st.cache_resource
+def get_graph():
+    client = ArangoClient(hosts="http://localhost:8529")
+    db = client.db("gaming", username="root", password="root")
+    return ArangoGraph(db=db)
+
+graph = get_graph()
+
+# -----------------------------
+# LLM SETUP
+# -----------------------------
+llm = ChatGroq(
+    model="llama3-8b",
+    temperature=0
+)
+
+qa_chain = ArangoGraphQAChain.from_llm(
+    graph=graph,
+    llm=llm,
+    verbose=True,
+    return_intermediate_steps=True
+)
+
+# -----------------------------
+# USER INPUT
+# -----------------------------
+st.subheader("Ask a question about the gaming graph")
+query = st.text_input("Enter your question:", "")
+
+if st.button("Run Query"):
+    if not query.strip():
+        st.warning("Please enter a question.")
+    else:
+        with st.spinner("Running query..."):
+            response = qa_chain.invoke(query)
+
+        # -----------------------------
+        # DISPLAY RESULTS
+        # -----------------------------
+        st.success("Query completed!")
+
+        st.subheader("Final Answer")
+        st.write(response["result"])
+
+        st.subheader("Generated AQL")
+        st.code(response["intermediate_steps"]["aql_generation"], language="sql")
+
+        st.subheader("Raw Database Results")
+        st.json(response["intermediate_steps"]["db_results"])
+
+        st.subheader("Model Metadata")
+        st.json(response["intermediate_steps"]["llm_metadata"])
