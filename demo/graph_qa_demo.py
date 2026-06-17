@@ -1,13 +1,13 @@
-from langchain_arangodb import ArangoGraph, ArangoGraphQAChain
+from langchain_arangodb import ArangoGraph
 from langchain_openai import ChatOpenAI
 
-# Connect to ArangoDB
 graph = ArangoGraph(
-    db_name="gaming",
+    url="http://localhost:8529",
     username="root",
     password="root",
-    url="http://localhost:8529"
+    database="gaming"
 )
+
 
 # LLM for natural language → AQL
 llm = ChatOpenAI(model="gpt-4o-mini")
