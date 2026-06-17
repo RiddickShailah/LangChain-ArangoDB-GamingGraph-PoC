@@ -1,0 +1,5 @@
+[
+  { "_key": "t1", "name": "Crash Masters Cup", "prize_pool": 50000 },
+  { "_key": "t2", "name": "High Roller Royale", "prize_pool": 150000 },
+  { "_key": "t3", "name": "Elite Gambler Showdown", "prize_pool": 75000 }
+]
