@@ -1,0 +1,6 @@
+[
+  { "_from": "players/p1", "_to": "players/p3" },
+  { "_from": "players/p3", "_to": "players/p9" },
+  { "_from": "players/p9", "_to": "players/p5" },
+  { "_from": "players/p5", "_to": "players/p7" }
+]
