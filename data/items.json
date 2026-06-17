@@ -1,0 +1,8 @@
+[
+  { "_key": "i1", "name": "Crash Predictor", "rarity": "Epic" },
+  { "_key": "i2", "name": "Lucky Charm", "rarity": "Common" },
+  { "_key": "i3", "name": "Risk Analyzer", "rarity": "Rare" },
+  { "_key": "i4", "name": "VIP Token", "rarity": "Legendary" },
+  { "_key": "i5", "name": "Multiplier Booster", "rarity": "Rare" },
+  { "_key": "i6", "name": "Crash Shield", "rarity": "Epic" }
+]
