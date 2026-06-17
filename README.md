@@ -22,10 +22,18 @@ Synthetic dataset includes:
 - 5 edge types (played_in, traded_with, logged_in_from, won_in, referred_by)
 
 ## Running the Demo
-1. Start ArangoDB locally
+1. Start ArangoDB locally:
+docker run -e ARANGO_ROOT_PASSWORD=password -p 8529:8529 arangodb
+
 2. Install dependencies:
+pip install -r requirements.txt
+
 3. Seed the database:
+python seed_database.py
+
 4. Run the LangChain demo:
+python demo.py
+
 
 ## Architecture
 - ArangoGraph for schema introspection
