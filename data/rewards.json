@@ -1,0 +1,5 @@
+[
+  { "_key": "r1", "type": "Tournament Win", "value": 5000 },
+  { "_key": "r2", "type": "Daily Bonus", "value": 100 },
+  { "_key": "r3", "type": "Referral Bonus", "value": 50 }
+]
