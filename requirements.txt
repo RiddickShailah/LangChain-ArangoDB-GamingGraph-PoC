@@ -1,0 +1,6 @@
+python-arango
+langchain
+langchain-openai
+langchain-arangodb
+numpy
+
