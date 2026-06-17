@@ -1,0 +1,12 @@
+[
+  { "_from": "players/p1", "_to": "games/g1" },
+  { "_from": "players/p2", "_to": "games/g2" },
+  { "_from": "players/p3", "_to": "games/g1" },
+  { "_from": "players/p4", "_to": "games/g4" },
+  { "_from": "players/p5", "_to": "games/g2" },
+  { "_from": "players/p6", "_to": "games/g3" },
+  { "_from": "players/p7", "_to": "games/g2" },
+  { "_from": "players/p8", "_to": "games/g4" },
+  { "_from": "players/p9", "_to": "games/g1" },
+  { "_from": "players/p10", "_to": "games/g3" }
+]
