@@ -1,0 +1,6 @@
+[
+  { "_from": "players/p1", "_to": "tournaments/t1" },
+  { "_from": "players/p3", "_to": "tournaments/t2" },
+  { "_from": "players/p7", "_to": "tournaments/t2" },
+  { "_from": "players/p10", "_to": "tournaments/t3" }
+]
