@@ -1,13 +1,14 @@
+from arango import ArangoClient
 from langchain_arangodb import ArangoGraph
 from langchain_openai import ChatOpenAI
 
+client = ArangoClient(hosts="http://localhost:8529")
+db = client.db("gaming", username="root", password="root")
+
 graph = ArangoGraph(
-    url="http://localhost:8529",
-    username="root",
-    password="root",
+    client=client,
     database="gaming"
 )
-
 
 # LLM for natural language → AQL
 llm = ChatOpenAI(model="gpt-4o-mini")
